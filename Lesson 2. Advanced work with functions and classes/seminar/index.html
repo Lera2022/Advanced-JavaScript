@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+    <script src="./task_3.js"
+            defer></script>
+    <script src="./task_4.js"
+            defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Task 1</h2>
+      <form
+          class="form">
+        <label for="number"
+               class="form__label">
+          Number:
+          <input type="text"
+                 name="number"
+                 id="number"
+                 class="form__input"
+                 placeholder="Number..."></label>
+        <button type="submit"
+                class="form__btn">check
+        </button>
+      </form>
+      <div class="result">
+        <p class="result__text">Result: <span class="result__current"></span></p>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Task 2</h2>
+      <label for="userInput">User input: </label>
+      <input id="userInput"
+             type="text"
+             class="user-input"
+             placeholder="Text...">
+      <button class="add-button" id="addUserInput" type="button">Добавить</button>
+      <ul class="item-list"></ul>
+      <div class="error-message"></div>
+    </div>
+  </body>
+</html>
