@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,29 @@
   <script src="2.js" defer></script>
 </head>
 <body>
-  
+  <div>
+    <h1>Товары</h1>
+    <div id="errorField">
+
+    </div>
+    <form id="reviewForm">
+      <label for="productField">Выберите продукт</label>
+      <select name="product"
+              id="productField">
+        <option value=""
+                disabled selected>Выберите продукт
+        </option>
+      </select>
+      <label for="reviewField">Отзыв</label>
+      <textarea name="review"
+                id="reviewField"
+                cols="30"
+                rows="10"></textarea>
+      <button type="submit">Добавить</button>
+    </form>
+    <div>
+      <dl id="reviews"></dl>
+    </div>
+  </div>
 </body>
 </html>
