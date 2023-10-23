@@ -1,49 +1,29 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reviews</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js" defer></script>
+   <title>Продукты</title>
 </head>
+
 <body>
-    <h1>Продукты</h1>
-    <h2 id="product">Продукт1</h2>
-    <div class="reviews">
-        <ul id="item-list"></ul>
-        <input type="text" id="item-input" placeholder="Ваш отзыв">
-        <button id="add-button">Добавить</button>
-    </div>
-
-
-    <script>
-        const productName = document.getElementById('product');
-        const inputField = document.getElementById('item-input');
-        const addButton = document.getElementById('add-button');
-        const itemList = document.getElementById('item-list');
-
-        let reviewsList = JSON.parse(localStorage.getItem('reviewsList')) || [];
-
-        const updateReviewsList = () => {
-            itemList.innerHTML = '';
-            reviewsList.forEach((item) => {
-                const listItem = document.createElement('li');
-                listItem.textContent = item;
-                itemList.append(listItem);
-            });
-            localStorage.setItem('reviewsList', JSON.stringify(reviewsList));
-        };
-
-        addButton.addEventListener('click', () => {
-            const newItem = inputField.value.trim();
-
-            if (newItem !== '') {
-                reviewsList.push(newItem);
-                inputField.value = '';
-                updateReviewsList();
-            }
-        });
-
-        updateReviewsList();
-    </script>
+   <div id="addReviewSection">
+      <h2>Ваш отзыв</h2>
+      <input type="text" id="productInput" placeholder="Продукт">
+      <textarea id="reviewInput" placeholder="Напишите отзыв"></textarea>
+      <button id="addReviewButton">Добавить отзыв</button>
+   </div>
+   <div id="productList">
+      <h1>Продукты</h1>
+      <ul id="products"></ul>
+   </div>
+   <div id="reviews">
+      <h3>Отзывы</h3>
+      <div id="productReviews"></div>
+   </div>
 </body>
+
 </html>
